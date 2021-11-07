@@ -1,0 +1,146 @@
+// SCSS things
+// --------------------------------------------------------------------------
+$ord-shadow: 1px 1px 5px black;;
+$drk-shadow: 1px 1px 1px rgb(84, 84, 84);
+$heading-bg: rgb(28, 28, 28);
+$gradient: linear-gradient(90deg, 
+         rgba(255,255,255,1) 0%, 
+         rgba(0,0,0,1) 50%, 
+         rgba(255,255,255,1) 100%);
+$border-color: silver;
+$line-space: 1rem;
+
+@mixin general_settings($padsize, $bg) {
+    background-color: $bg;
+    padding: $padsize;
+    border-radius: 5px;
+}
+
+@mixin enlarge_on_hover {
+    transition: 300ms;
+    &:hover {
+        font-size: large;
+        text-shadow: $drk-shadow;
+    }
+}
+
+@mixin line-padding($size) {
+    padding-bottom: 0.5*$size;
+    padding-top: 0.5*$size;
+}
+
+// General
+// --------------------------------------------------------------------------
+body {
+    font-family: 'Zilla Slab', sans-serif;
+    background-color: rgb(38, 38, 38);
+    color: white;
+    margin: auto;
+    width: 60%;
+
+    * {
+        margin: 0;
+    }
+}
+
+
+// Lists and paragraphs
+// --------------------------------------------------------------------------
+ul, p {
+    list-style: lower-alpha;
+    padding-left: 1em;
+    @include line-padding(0.5*$line-space);
+    @include enlarge_on_hover();
+}
+
+ol {
+    @include enlarge_on_hover();
+    box-shadow: $ord-shadow;
+    @include general_settings(0, $heading-bg);
+}
+
+li {
+    @include general_settings(0.5em, $heading-bg);
+}
+
+// External
+// --------------------------------------------------------------------------
+span {
+    .smallcaps {
+        font-variant: small-caps;
+    }
+
+    .underline {
+        text-decoration: underline;
+    }
+}
+
+code {
+    white-space: pre-wrap;
+    font-weight: bold;
+    color: black;
+    border-color: $border-color;
+    @include general_settings(1px, $border-color)
+}
+
+pre code {
+    width: 100%;
+    font-size: large;
+    display: block;
+    @include enlarge_on_hover();
+}
+
+div {
+    .column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+    }
+}
+
+// Text
+// --------------------------------------------------------------------------
+h1 {
+    text-align: center;
+    font-size: xx-large;
+    text-shadow: $ord-shadow;
+    // refactor
+    @include general_settings(0.4em, $heading-bg);
+    box-shadow: $ord-shadow;
+    margin-bottom: 2*$line-space;
+}
+
+h2 {
+    color: darkred;
+    text-shadow: $ord-shadow;
+    transition: 200ms;
+    @include line-padding($line-space);
+    &:hover {
+        text-shadow: 1px 1px 12px black;
+    }
+}
+
+a {
+    font-style: italic;
+    transition: 500ms;
+    &:link {
+        color: lightcoral;
+    }
+    &:visited {
+        color: rgb(146, 98, 186);
+    }
+    &:hover {
+        text-shadow: $drk-shadow;
+    }
+}
+
+// Line breaker
+// --------------------------------------------------------------------------
+.lb {
+    border-bottom: 1px solid white;
+    border-image: $gradient;
+    width: 50%;
+    margin: auto;
+    height: 10px; 
+}
+

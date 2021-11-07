@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,
+      user-scalable=yes" />
+    <title>README</title>
+    <link rel="stylesheet" href="./styles/darktheme.css" />
+  </head>
+
+  <body>
+    <h1 id="vimcompletesme">VimCompletesMe</h1>
+    <p>A super simple, super minimal, super light-weight tab-completion plugin
+      for Vim.</p>
+    <p>Without any configuration, the Tab key will, depending on the context,
+      offer:</p>
+    <ul>
+      <li>Vim&#8217;s local keyword completion (<a
+          href="http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-N">Ctrl-X_Ctrl-N</a>)</li>
+      <li>File path completion when typing a path (<a
+          href="http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-F">Ctrl-X_Ctrl-F</a>)</li>
+      <li>Omni-completion after typing a character specified by <code>g:vcm_omni_pattern</code>
+        (<a
+          href="http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-O">Ctrl-X_Ctrl-O</a>)</li>
+    </ul>
+    <p>With a <code>b:vcm_tab_complete</code> variable, you can set the Tab key
+      to use the following type of completions:
+    </p>
+    <ul>
+      <li>Dictionary words (<a
+          href="http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-K">Ctrl-X_Ctrl-K</a>)</li>
+      <li>User-defined completion (<a
+          href="http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-U">Ctrl-X_Ctrl-U</a>)
+      </li>
+      <li>Tags (<a
+          href="http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-%5D">Ctrl-X_Ctrl-]</a>)</li>
+      <li>Vim command line (<a
+          href="http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-V">Ctrl-X_Ctrl-V</a>)</li>
+      <li>Omni completion (<a
+          href="http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-O">Ctrl-X_Ctrl-O</a>)</li>
+    </ul>
+    <p>If any of above types of completions fails to return any results, hitting
+      Tab again will switch back to Vim&#8217;s
+      local keyword completion. VimCompletesMe will go back to trying the
+      special completion for the next tab completion.
+    </p>
+    <p>You can set the <code>b:vcm_tab_complete</code> variable interactively,
+      or in an <code>autocmd</code>. For
+      instance, the <code>autocmd</code> below will use Vim Command Line
+      completion for all vim filetypes:</p>
+    <pre><code>autocmd FileType vim let b:vcm_tab_complete = 'vim'</code></pre>
+    <h2 id="installation">Installation</h2>
+    <p>If you use Vim 8 or better, simply copy and paste:</p>
+    <pre><code>git clone git://github.com/ajh17/VimCompletesMe.git ~/.vim/pack/vendor/start/VimCompletesMe</code></pre>
+    <p>Once the helptags have been generated (<code>:helptags ALL</code>), see
+      <code>:h VimCompletesMe</code> for usage.
+    </p>
+    <h2 id="thanks">Thanks</h2>
+    <ul>
+      <li><a href="https://github.com/dahu">bairui</a> for helping me with this
+        plugin, and for the kickass name.</li>
+      <li>You for using it!</li>
+    </ul>
+    <h2 id="license">License</h2>
+    <p>Copyright (c) Akshay Hegde. Distributed under the same terms as Vim
+      itself. See <code>:help license</code></p>
+  </body>
+
+</html>

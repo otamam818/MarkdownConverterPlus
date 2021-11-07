@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="generator" content="pandoc"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="./styles/darktheme.css"/></head>
+<body>
+<h1 id="covidpearsoncorrelation">COVIDPearsonCorrelation</h1>
+<p>Get the Pearson Correlation of COVID cases between 2 countries</p>
+<hr/>
+<h2 id="dependencies">Dependencies</h2>
+<p><a href="https://pypi.org/project/pandas/">Pandas:</a></p>
+<pre><code>pip install pandas</code></pre>
+<h2 id="usage">Usage</h2>
+<p>Git clone the repo. In the <code>pear_corr.py</code> file, there are 2 lines for changing the country:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1">COUNTRY_1: <span class="bu">str</span> <span class="op">=</span> <span class="st">"Australia"</span></a>
+<a class="sourceLine" id="cb2-2" title="2">COUNTRY_2: <span class="bu">str</span> <span class="op">=</span> <span class="st">"Bangladesh"</span></a></code></pre></div>
+<p>Change these two to any combination of any country available in the <code>WHO-COVID-19-global-data.csv</code> file. Following that, run the python file:</p>
+<pre><code>python pear_corr.py</code></pre>
+<p>Or, if you are on Linux:</p>
+<pre><code>python3 pear_corr.py</code></pre>
+<h2 id="external-data">External data</h2>
+<p>If this information feels outdated, download the file from:<br/>
+- <a href="https://covid19.who.int/WHO-COVID-19-global-data.csv">Daily cases and deaths by date reported to WHO</a></p>
+<p>and replace the <code>WHO-COVID-19-global-data.csv</code> file. If the file is no longer available, check <a href="https://covid19.who.int/info/">WHO website&#8217;s COVID information area</a></p>
+</body>
+</html>

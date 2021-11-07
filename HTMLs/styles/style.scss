@@ -1,0 +1,74 @@
+$ord-shadow: 1px 1px 1px rgb(153, 153, 153);
+$drk-shadow: 1px 1px 1px rgb(84, 84, 84);
+
+
+body {
+    font-family: 'Zilla Slab', sans-serif;
+}
+
+span {
+    .smallcaps {
+        font-variant: small-caps;
+    }
+
+    .underline {
+        text-decoration: underline;
+    }
+}
+
+code {
+    white-space: pre-wrap;
+    font-weight: bold;
+}
+
+div {
+    .column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+    }
+}
+
+h1 {
+    text-align: center;
+    font-size: xx-large;
+    text-shadow: $ord-shadow
+}
+
+h2 {
+    color: darkred;
+    text-shadow: $ord-shadow;
+    transition: 200ms;
+    &:hover {
+        text-shadow: $drk-shadow;
+    }
+}
+
+.lb {
+    border-bottom: 2px solid black;
+    border-bottom-color: linear-gradient(90deg, 
+    rgba(255,255,255,1) 0%, 
+    rgba(0,0,0,1) 50%, 
+    rgba(255,255,255,1) 100%);
+    background-color: linear-gradient(90deg, 
+    rgba(255,255,255,1) 0%, 
+    rgba(0,0,0,1) 50%, 
+    rgba(255,255,255,1) 100%);;
+    width: 50%;
+    margin: auto;
+    height: 10px; 
+}
+
+a {
+    font-style: italic;
+    transition: 500ms;
+    &:link {
+        color: midnightblue;
+    }
+    &:visited {
+        color: rgb(72, 41, 97);
+    }
+    &:hover {
+        text-shadow: $ord-shadow;
+    }
+}
